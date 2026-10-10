@@ -22,13 +22,13 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28 border-t border-white/[0.08] relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.03] to-white/[0.01] border border-white/[0.08] relative overflow-hidden"
-        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="p-6 sm:p-10 md:p-12 rounded-3xl bg-gradient-to-b from-white/[0.03] to-white/[0.01] border border-white/[0.08] relative overflow-hidden"
+          >
           {/* Subtle accent glow */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 blur-[100px] pointer-events-none rounded-full" />
 
@@ -120,8 +120,8 @@ export default function Contact() {
           </div>
 
           {/* Social Row */}
-          <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
+          <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-3">
               <motion.a
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}

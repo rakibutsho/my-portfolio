@@ -69,9 +69,9 @@ export default function Hero() {
       />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Text, Status & CTAs (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="order-2 lg:order-1 lg:col-span-7 space-y-6">
             {/* Top Badge: Availability */}
             <motion.div
               variants={fadeInUp}
@@ -220,11 +220,11 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 flex justify-center lg:justify-end"
+            className="order-1 lg:order-2 lg:col-span-5 w-full flex justify-center lg:justify-end"
           >
-            <div className="relative group">
+            <div className="relative group flex flex-col items-center lg:items-end">
               {/* Subtle ambient back-glow behind the image */}
-              <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500/20 via-sky-500/20 to-purple-500/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 via-sky-500/20 to-purple-500/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Main Image Container */}
               <div className="relative w-64 sm:w-72 md:w-80 rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0e1017] border border-white/[0.12] shadow-2xl shadow-black/80">

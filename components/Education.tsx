@@ -47,7 +47,7 @@ export default function Education() {
                   key={edu.degree}
                   className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.14] transition-all"
                 >
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-2">
                     <div>
                       <h4 className="text-base font-bold text-white tracking-tight">
                         {edu.degree}
@@ -56,7 +56,7 @@ export default function Education() {
                         {edu.institution}
                       </p>
                     </div>
-                    <span className="text-xs font-mono text-slate-400 bg-white/[0.03] px-2.5 py-1 rounded-md border border-white/[0.06] shrink-0">
+                    <span className="self-start text-xs font-mono text-slate-400 bg-white/[0.03] px-2.5 py-1 rounded-md border border-white/[0.06] shrink-0 whitespace-nowrap">
                       {edu.period}
                     </span>
                   </div>
@@ -97,7 +97,7 @@ export default function Education() {
                   key={lead.role + lead.organization}
                   className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.14] transition-all"
                 >
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-2">
                     <div>
                       <h4 className="text-base font-bold text-white tracking-tight flex items-center gap-2">
                         <span>{lead.role}</span>
@@ -107,7 +107,7 @@ export default function Education() {
                         {lead.organization}
                       </p>
                     </div>
-                    <span className="text-xs font-mono text-slate-400 bg-white/[0.03] px-2.5 py-1 rounded-md border border-white/[0.06] shrink-0">
+                    <span className="self-start text-xs font-mono text-slate-400 bg-white/[0.03] px-2.5 py-1 rounded-md border border-white/[0.06] shrink-0 whitespace-nowrap">
                       {lead.period}
                     </span>
                   </div>

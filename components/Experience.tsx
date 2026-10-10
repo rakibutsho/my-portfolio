@@ -68,7 +68,7 @@ export default function Experience() {
                   </div>
 
                   <div className="flex items-center gap-2 self-start sm:self-center">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-white/[0.03] border border-white/[0.08] text-slate-300">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-white/[0.03] border border-white/[0.08] text-slate-300 shrink-0 whitespace-nowrap">
                       <Calendar className="w-3 h-3 text-slate-400" />
                       {item.period}
                     </span>

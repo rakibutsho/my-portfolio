@@ -30,11 +30,11 @@ export default function MetricsStrip() {
               whileHover={{ y: -3, transition: { duration: 0.2 } }}
               className="p-4 sm:p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.14] hover:bg-white/[0.03] transition-colors cursor-default"
             >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs uppercase tracking-wider text-slate-400 font-medium">
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <span className="flex-1 min-w-0 text-[10px] sm:text-xs uppercase tracking-wider text-slate-400 font-medium leading-tight pt-1 break-words">
                   {metric.label}
                 </span>
-                <span className="p-1 rounded-md bg-white/[0.04] border border-white/[0.06]">
+                <span className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center rounded-md bg-white/[0.04] border border-white/[0.06]">
                   {icons[idx]}
                 </span>
               </div>

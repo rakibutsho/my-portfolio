@@ -31,7 +31,6 @@ export default function SkillsMatrix() {
         { name: "Next.js (App Router)", highlight: true },
         { name: "React.js", highlight: true },
         { name: "Tailwind CSS", highlight: true },
-        { name: "Zustand" },
         { name: "Redux Toolkit" },
       ],
     },
@@ -53,7 +52,6 @@ export default function SkillsMatrix() {
       skills: [
         { name: "PostgreSQL", highlight: true },
         { name: "MongoDB", highlight: true },
-        { name: "Prisma ORM", highlight: true },
         { name: "Firebase" },
       ],
     },
@@ -69,6 +67,8 @@ export default function SkillsMatrix() {
     {
       label: "Delivery, CI/CD & Tooling",
       skills: [
+        { name: "Git" },
+        { name: "GitHub" },
         { name: "GitHub Actions", highlight: true },
         { name: "Vercel", highlight: true },
         { name: "Postman" },
@@ -111,9 +111,9 @@ export default function SkillsMatrix() {
           >
             <div>
               {/* Panel Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-white/[0.06] mb-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0 pb-4 border-b border-white/[0.06] mb-6">
                 <div className="flex items-center gap-3">
-                  <span className="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
+                  <span className="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 shrink-0">
                     <Layers className="w-5 h-5" />
                   </span>
                   <div>
@@ -125,7 +125,7 @@ export default function SkillsMatrix() {
                     </p>
                   </div>
                 </div>
-                <span className="text-xs font-mono text-indigo-400 font-semibold px-2.5 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+                <span className="self-start sm:self-center shrink-0 text-xs font-mono text-indigo-400 font-semibold px-2.5 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/20">
                   BUILD
                 </span>
               </div>
@@ -174,9 +174,9 @@ export default function SkillsMatrix() {
           >
             <div>
               {/* Panel Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-white/[0.06] mb-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0 pb-4 border-b border-white/[0.06] mb-6">
                 <div className="flex items-center gap-3">
-                  <span className="p-2.5 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400">
+                  <span className="p-2.5 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 shrink-0">
                     <Server className="w-5 h-5" />
                   </span>
                   <div>
@@ -188,7 +188,7 @@ export default function SkillsMatrix() {
                     </p>
                   </div>
                 </div>
-                <span className="text-xs font-mono text-sky-400 font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/10 border border-sky-500/20">
+                <span className="self-start sm:self-center shrink-0 text-xs font-mono text-sky-400 font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/10 border border-sky-500/20">
                   OPERATE
                 </span>
               </div>

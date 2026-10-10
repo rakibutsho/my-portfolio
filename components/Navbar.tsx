@@ -42,7 +42,7 @@ export default function Navbar() {
             RI
           </span>
           <span className="font-medium text-slate-200">
-            rakib<span className="text-indigo-400 font-mono">.dev</span>
+            rakibutsho<span className="text-indigo-400 font-mono">.dev</span>
           </span>
         </a>
 
