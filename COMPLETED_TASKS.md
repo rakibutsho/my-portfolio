@@ -47,12 +47,16 @@
 - [x] Fully responsive mobile hamburger drawer with touch-friendly navigation.
 
 #### Above-The-Fold Hero (`components/Hero.tsx`)
+- [x] Integrated real profile portrait (`/profile.jpg`) in a modern 2-column layout with subtle ambient back-glow and frosted bottom tag.
 - [x] Live availability status pill: `● Available for Full-Time & Remote Roles` with animated emerald pulse.
 - [x] Real-time **Dhaka, BD (UTC+6)** ticking clock to help remote hiring managers check timezone overlap immediately.
 - [x] Plainspoken, authentic technical summary emphasizing full-stack engineering and performance gains.
 - [x] Primary **Download Resume** CTA button.
 - [x] Secondary **Copy Email** (`rakibutsho1920@gmail.com`) button with interactive checkmark feedback.
 - [x] Custom SVG icon links to GitHub and LinkedIn profiles.
+
+#### Favicon & Brand Mark (`app/icon.svg`)
+- [x] Custom SVG favicon (`/icon.svg`) with dark obsidian tile and glowing "RI" monogram.
 
 #### Verified Production Metrics (`components/MetricsStrip.tsx`)
 - [x] 4-column responsive metrics bar:
