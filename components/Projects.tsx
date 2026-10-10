@@ -1,4 +1,7 @@
+"use client";
+
 import { ExternalLink, CheckCircle2, Activity, ShieldCheck, FileCheck } from "lucide-react";
+import { motion } from "motion/react";
 import { GithubIcon } from "@/components/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 
@@ -13,7 +16,13 @@ export default function Projects() {
     <section id="projects" className="py-20 md:py-28 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-12"
+        >
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-indigo-400 mb-3">
             <span>// 01. FLAGSHIP WORK</span>
           </div>
@@ -23,14 +32,23 @@ export default function Projects() {
           <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-2xl">
             Real-world full-stack applications solving distributed monitoring, booking automation, and role-based medical staffing workflows.
           </p>
-        </div>
+        </motion.div>
 
         {/* Project Cards List */}
         <div className="space-y-8">
           {PORTFOLIO_DATA.projects.map((project, index) => (
-            <article
+            <motion.article
               key={project.id}
-              className="p-6 sm:p-8 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.16] transition-all group"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.55,
+                delay: index * 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ y: -4, transition: { duration: 0.25 } }}
+              className="p-6 sm:p-8 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.025] transition-colors group shadow-lg shadow-black/20"
             >
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-5 border-b border-white/[0.06]">
                 <div className="space-y-1.5">
@@ -55,26 +73,30 @@ export default function Projects() {
                 {/* Live & GitHub Action Buttons */}
                 <div className="flex items-center gap-2.5 self-start shrink-0">
                   {project.githubUrl && (
-                    <a
+                    <motion.a
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] hover:text-white transition-all"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] hover:text-white transition-colors"
                     >
                       <GithubIcon className="w-3.5 h-3.5" />
                       <span>Code</span>
-                    </a>
+                    </motion.a>
                   )}
                   {project.liveUrl && (
-                    <a
+                    <motion.a
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-all shadow-sm shadow-indigo-600/30 active:scale-95"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors shadow-sm shadow-indigo-600/30"
                     >
                       <span>Live Preview</span>
                       <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
+                    </motion.a>
                   )}
                 </div>
               </div>
@@ -113,7 +135,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

@@ -1,12 +1,21 @@
+"use client";
+
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
-import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
+import { motion } from "motion/react";
 
 export default function Experience() {
   return (
     <section id="experience" className="py-20 md:py-28 border-t border-white/[0.08] relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-12"
+        >
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-indigo-400 mb-3">
             <span>// 03. CAREER TRAJECTORY</span>
           </div>
@@ -16,13 +25,21 @@ export default function Experience() {
           <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-2xl">
             Track record of shipping production features, optimizing application performance, and maintaining server infrastructure.
           </p>
-        </div>
+        </motion.div>
 
         {/* Timeline */}
         <div className="space-y-8 relative before:absolute before:inset-0 before:left-3.5 sm:before:left-4 before:w-[1px] before:bg-white/[0.08]">
           {PORTFOLIO_DATA.experience.map((item, idx) => (
-            <div
+            <motion.div
               key={`${item.company}-${item.period}`}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.5,
+                delay: idx * 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="relative pl-10 sm:pl-12 group"
             >
               {/* Timeline Indicator Dot */}
@@ -31,7 +48,10 @@ export default function Experience() {
               </div>
 
               {/* Experience Card */}
-              <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.14] transition-all">
+              <motion.div
+                whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                className="p-6 sm:p-7 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.16] hover:bg-white/[0.025] transition-colors"
+              >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/[0.06]">
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
@@ -76,8 +96,8 @@ export default function Experience() {
                     </span>
                   ))}
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>

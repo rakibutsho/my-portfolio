@@ -13,8 +13,16 @@
 ### 1. Foundation & Design System Setup
 - [x] **Dependencies Installed**:
   - `lucide-react`: Crisp engineering and navigation icons.
-  - `motion`: Smooth micro-interactions and transitions.
+  - `motion` (`motion/react`): Modern declarative spring micro-interactions and scroll reveals.
   - `clsx` & `tailwind-merge`: Utility class merging.
+- [x] **Smooth Framer Motion Animations Applied**:
+  - Hero staggered entrance animation with spring physics on headline, bio, CTAs, and portrait.
+  - Scroll reveals on metrics strip cards with subtle hover lift.
+  - Project case study cards reveal gracefully on scroll with interactive button scale.
+  - Skills matrix cards staggered entrance and interactive hover scale on each tech logo pill.
+  - Experience timeline milestone slide-ins from left on scroll.
+  - Education & Leadership cards reveal on scroll.
+  - Contact section smooth fade-in and tactile tap feedback on action buttons.
 - [x] **Theme Tokens & Base Styling (`app/globals.css`)**:
   - Configured deep obsidian dark background (`#090a0f`) with high-contrast text (`#f8fafc`).
   - Added hairline borders (`rgba(255, 255, 255, 0.08)`).
@@ -48,8 +56,8 @@
 
 #### Above-The-Fold Hero (`components/Hero.tsx`)
 - [x] Integrated real profile portrait (`/profile.jpg`) in a modern 2-column layout with subtle ambient back-glow and frosted bottom tag.
-- [x] Live availability status pill: `● Available for Full-Time & Remote Roles` with animated emerald pulse.
-- [x] Real-time **Dhaka, BD (UTC+6)** ticking clock to help remote hiring managers check timezone overlap immediately.
+- [x] Placed real-time **Dhaka, BD (UTC+6)** ticking clock badge directly underneath the profile photo for balanced visual composition.
+- [x] Left column headline streamlined: dedicated `● Available for Full-Time & Remote Roles` status pill directly above your title.
 - [x] Plainspoken, authentic technical summary emphasizing full-stack engineering and performance gains.
 - [x] Primary **Download Resume** CTA button.
 - [x] Secondary **Copy Email** (`rakibutsho1920@gmail.com`) button with interactive checkmark feedback.
@@ -80,14 +88,14 @@
   - Node.js, Express, REST APIs, WebSockets, Prisma ORM, Firebase.
   - PostgreSQL, MongoDB, Docker, Linux VPS, Nginx, PM2, Git/GitHub Actions, Vercel, VS Code.
 
-#### Technical Arsenal Matrix (`components/SkillsMatrix.tsx`)
-- [x] 4 clean, scannable domain cards:
-  1. **Core Languages**
-  2. **Frontend Architecture**
-  3. **Backend & System APIs**
-  4. **Databases, Cloud & DevOps**
-- [x] **Inline Tech Logos**: Every skill pill contains its official SVG icon next to the name with subtle hover scale micro-interactions.
-- [x] Strictly avoided tacky progress bars and fake terminal gimmicks for maximum recruiter readability.
+#### Technical Arsenal Matrix (`components/SkillsMatrix.tsx` & `components/TechIcons.tsx`)
+- [x] Refactored to a **senior 2-column balanced architecture**:
+  - **Panel 1: Application Engineering (BUILD)**: Languages & Core Runtimes, Frontend & UI Architecture, Backend & System APIs.
+  - **Panel 2: Systems, Data & Infrastructure (OPERATE)**: Data Architecture & Storage, Server & Infrastructure Management (Linux VPS, Nginx, PM2, Docker), Delivery & CI/CD.
+- [x] Zero empty voids or awkward vertical gaps; perfectly matched panel heights.
+- [x] Upgraded to **authentic, official SVG brand logos** with subtle brand colors:
+  - TypeScript (blue), JavaScript (yellow), Next.js (white N), React (cyan atom), Tailwind (sky wave), Zustand (bear), Redux (purple molecule), Node.js (green hexagon), Express (white ex), PostgreSQL (blue elephant), MongoDB (green leaf), Docker (whale), Linux (Tux penguin), Nginx (green N), PM2 (quad node), GitHub Actions (workflow), Vercel (triangle), Postman (orange astronaut), VS Code (blue ribbon).
+- [x] Demonstrates end-to-end full-stack maturity (how you architect software vs. how you ship and operate it).
 
 #### Professional Experience Timeline (`components/Experience.tsx`)
 - [x] Chronological vertical timeline with hairline connectors:

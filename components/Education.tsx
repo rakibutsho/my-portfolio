@@ -1,12 +1,21 @@
+"use client";
+
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 import { GraduationCap, Award, Users, Trophy } from "lucide-react";
+import { motion } from "motion/react";
 
 export default function Education() {
   return (
     <section id="education" className="py-20 md:py-28 border-t border-white/[0.08] relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-12"
+        >
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-indigo-400 mb-3">
             <span>// 04. ACADEMICS & LEADERSHIP</span>
           </div>
@@ -16,11 +25,17 @@ export default function Education() {
           <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-2xl">
             Strong foundational computer science background paired with active community leadership and event organization.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Education Card */}
-          <div className="space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="space-y-4"
+          >
             <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold flex items-center gap-2">
               <GraduationCap className="w-4 h-4 text-indigo-400" />
               <span>Formal Education</span>
@@ -61,10 +76,16 @@ export default function Education() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Leadership & Activities Card */}
-          <div className="space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="space-y-4"
+          >
             <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold flex items-center gap-2">
               <Users className="w-4 h-4 text-sky-400" />
               <span>Leadership & Community</span>
@@ -97,7 +118,7 @@ export default function Education() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, Copy, Check, ExternalLink, Download, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, Copy, Check, Download, ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 
@@ -21,7 +22,13 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28 border-t border-white/[0.08] relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.03] to-white/[0.01] border border-white/[0.08] relative overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.03] to-white/[0.01] border border-white/[0.08] relative overflow-hidden"
+        >
           {/* Subtle accent glow */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 blur-[100px] pointer-events-none rounded-full" />
 
@@ -52,9 +59,11 @@ export default function Contact() {
               </div>
 
               <div className="mt-4 flex items-center gap-2">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={handleCopy}
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-semibold bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-white transition-all active:scale-95"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-semibold bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-white transition-colors"
                 >
                   {copied ? (
                     <>
@@ -67,14 +76,16 @@ export default function Contact() {
                       <span>Copy Address</span>
                     </>
                   )}
-                </button>
-                <a
+                </motion.button>
+                <motion.a
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
                   href={`mailto:${PORTFOLIO_DATA.profile.email}`}
-                  className="inline-flex items-center justify-center p-2 rounded-lg text-xs font-medium bg-indigo-600 hover:bg-indigo-500 text-white transition-all"
+                  className="inline-flex items-center justify-center p-2 rounded-lg text-xs font-medium bg-indigo-600 hover:bg-indigo-500 text-white transition-colors"
                   title="Open mail client"
                 >
                   <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </motion.a>
               </div>
             </div>
 
@@ -94,14 +105,16 @@ export default function Contact() {
               </div>
 
               <div className="mt-4 flex items-center gap-2">
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   href={PORTFOLIO_DATA.profile.resumePdf}
                   download="Rakibul_Islam_Resume.pdf"
-                  className="w-full inline-flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-sm shadow-indigo-600/30 active:scale-95"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors shadow-sm shadow-indigo-600/30"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>Download Resume PDF</span>
-                </a>
+                </motion.a>
               </div>
             </div>
           </div>
@@ -109,24 +122,28 @@ export default function Contact() {
           {/* Social Row */}
           <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
                 href={PORTFOLIO_DATA.profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:text-white transition-all"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:text-white transition-colors"
               >
                 <GithubIcon className="w-3.5 h-3.5" />
                 <span>github.com/rakibutsho</span>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
                 href={PORTFOLIO_DATA.profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:text-white transition-all"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:text-white transition-colors"
               >
                 <LinkedinIcon className="w-3.5 h-3.5" />
                 <span>linkedin.com/in/rakibutsho</span>
-              </a>
+              </motion.a>
             </div>
 
             <span className="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
@@ -134,7 +151,7 @@ export default function Contact() {
               <span>Response time: &lt; 24 hours</span>
             </span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

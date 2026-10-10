@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Download, Copy, Check, Clock, MapPin, Sparkles, Code2 } from "lucide-react";
+import { Download, Copy, Check, Clock, MapPin } from "lucide-react";
+import { motion } from "motion/react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 
@@ -38,19 +39,47 @@ export default function Hero() {
     }
   };
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: custom * 0.1,
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+      },
+    }),
+  };
+
   return (
     <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
       {/* Subtle background ambient glow */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-indigo-500/5 blur-[120px] pointer-events-none rounded-full" />
-      <div className="absolute top-1/3 right-1/4 w-[350px] h-[300px] bg-sky-500/5 blur-[100px] pointer-events-none rounded-full" />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-indigo-500/5 blur-[120px] pointer-events-none rounded-full"
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
+        className="absolute top-1/3 right-1/4 w-[350px] h-[300px] bg-sky-500/5 blur-[100px] pointer-events-none rounded-full"
+      />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Column: Text, Status & CTAs (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Top Badges: Availability & Real-Time Dhaka Clock */}
-            <div className="flex flex-wrap items-center gap-2.5">
-              {/* Status Badge */}
+            {/* Top Badge: Availability */}
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              custom={0}
+              className="flex items-center gap-2.5"
+            >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-xs font-medium">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -58,23 +87,16 @@ export default function Hero() {
                 </span>
                 <span>{PORTFOLIO_DATA.profile.statusText}</span>
               </div>
-
-              {/* Timezone & Live Clock Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-slate-400 text-xs font-mono">
-                <MapPin className="w-3 h-3 text-slate-500" />
-                <span>Dhaka, BD (UTC+6)</span>
-                {currentTime && (
-                  <>
-                    <span className="text-slate-600">·</span>
-                    <Clock className="w-3 h-3 text-indigo-400" />
-                    <span className="text-slate-300 font-semibold">{currentTime}</span>
-                  </>
-                )}
-              </div>
-            </div>
+            </motion.div>
 
             {/* Main Headline */}
-            <div className="space-y-2">
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              custom={1}
+              className="space-y-2"
+            >
               <p className="text-xs uppercase tracking-widest font-mono text-indigo-400 font-semibold">
                 Full-Stack Software Engineer
               </p>
@@ -84,34 +106,50 @@ export default function Hero() {
                   {PORTFOLIO_DATA.profile.fullName}
                 </span>
               </h1>
-            </div>
+            </motion.div>
 
             {/* Authentic Technical Bio */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+            <motion.p
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              custom={2}
+              className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal"
+            >
               Building reliable, high-performance web applications end-to-end. Specialized in{" "}
               <span className="text-white font-medium">React / Next.js</span> frontends and{" "}
               <span className="text-white font-medium">Node.js</span> microservices backed by{" "}
               <span className="text-white font-medium">PostgreSQL & MongoDB</span>. Delivered a{" "}
               <span className="text-emerald-400 font-mono font-medium">+25% load speed boost</span> and engineered
               real-time job-scheduled systems deployed on Linux VPS infrastructure.
-            </p>
+            </motion.p>
 
             {/* Action Controls & Social Strip */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              custom={3}
+              className="flex flex-wrap items-center gap-3 pt-2"
+            >
               {/* Primary: Download Resume */}
-              <a
+              <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 href={PORTFOLIO_DATA.profile.resumePdf}
                 download="Rakibul_Islam_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition-all shadow-md shadow-indigo-600/30 hover:shadow-indigo-500/50 active:scale-95"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition-colors shadow-md shadow-indigo-600/30 hover:shadow-indigo-500/50"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Resume</span>
-              </a>
+              </motion.a>
 
               {/* Secondary: Copy Email */}
-              <button
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={handleCopyEmail}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-200 hover:text-white font-medium text-sm transition-all active:scale-95 group"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-200 hover:text-white font-medium text-sm transition-colors group"
               >
                 {copied ? (
                   <>
@@ -124,33 +162,43 @@ export default function Hero() {
                     <span>{PORTFOLIO_DATA.profile.email}</span>
                   </>
                 )}
-              </button>
+              </motion.button>
 
               {/* GitHub Link */}
-              <a
+              <motion.a
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
                 href={PORTFOLIO_DATA.profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
-                className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-all active:scale-95"
+                className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-colors"
               >
                 <GithubIcon className="w-4 h-4" />
-              </a>
+              </motion.a>
 
               {/* LinkedIn Link */}
-              <a
+              <motion.a
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
                 href={PORTFOLIO_DATA.profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
-                className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-all active:scale-95"
+                className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-colors"
               >
                 <LinkedinIcon className="w-4 h-4" />
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
 
             {/* Quick Tech Pill Row */}
-            <div className="pt-4 border-t border-white/[0.08] flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono text-slate-400">
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              custom={4}
+              className="pt-4 border-t border-white/[0.08] flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono text-slate-400"
+            >
               <span className="text-slate-500 font-sans uppercase tracking-wider text-[11px]">Core Stack</span>
               <div className="flex flex-wrap items-center gap-1.5">
                 {["Next.js", "TypeScript", "Node.js", "PostgreSQL", "MongoDB", "Linux VPS"].map(
@@ -164,11 +212,16 @@ export default function Hero() {
                   )
                 )}
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Column: Professional Portrait Card (5 cols) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 flex justify-center lg:justify-end"
+          >
             <div className="relative group">
               {/* Subtle ambient back-glow behind the image */}
               <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500/20 via-sky-500/20 to-purple-500/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
@@ -198,8 +251,19 @@ export default function Hero() {
                   </span>
                 </div>
               </div>
+
+              {/* Live Timezone & Local Clock Bar under image */}
+              {currentTime && (
+                <div className="mt-3.5 flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-slate-400 text-xs font-mono shadow-sm backdrop-blur-sm">
+                  <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                  <span>Dhaka, BD (UTC+6)</span>
+                  <span className="text-slate-600">·</span>
+                  <Clock className="w-3.5 h-3.5 text-indigo-400" />
+                  <span className="text-slate-200 font-semibold">{currentTime}</span>
+                </div>
+              )}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

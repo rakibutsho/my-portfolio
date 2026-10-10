@@ -1,5 +1,8 @@
+"use client";
+
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 import { TrendingUp, Zap, Server, GraduationCap } from "lucide-react";
+import { motion } from "motion/react";
 
 export default function MetricsStrip() {
   const icons = [
@@ -14,9 +17,18 @@ export default function MetricsStrip() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {PORTFOLIO_DATA.metrics.map((metric, idx) => (
-            <div
+            <motion.div
               key={metric.label}
-              className="p-4 sm:p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.12] transition-colors"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-20px" }}
+              transition={{
+                duration: 0.45,
+                delay: idx * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
+              className="p-4 sm:p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.14] hover:bg-white/[0.03] transition-colors cursor-default"
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs uppercase tracking-wider text-slate-400 font-medium">
@@ -32,7 +44,7 @@ export default function MetricsStrip() {
               <p className="mt-1.5 text-xs text-slate-400 leading-snug line-clamp-2">
                 {metric.subtext}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
