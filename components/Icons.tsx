@@ -42,15 +42,20 @@ export function DevtoIcon({ className = "w-4 h-4" }: { className?: string }) {
     <svg
       className={className}
       viewBox="0 0 24 24"
-      fill="currentColor"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H5v4.36h1.54c.4 0 .69-.08.87-.24.18-.16.27-.42.27-.78v-2.33c0-.36-.09-.62-.26-.78zm1.74 3.11c0 .72-.25 1.28-.75 1.68-.5.4-1.2.6-2.1.6H3.36V8.56h2.95c.9 0 1.6.2 2.1.6.5.4.75.96.75 1.68v2.32zm3.32-4.6h3.42v1.36h-2.02v1.17h1.75v1.36h-1.75v1.36h2.02v1.36h-3.42V8.56zm7.25 4.54l1.35-4.54h1.49l-2.08 6.88h-1.52l-2.08-6.88h1.49l1.35 4.54z" />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M2 5.5A3.5 3.5 0 0 1 5.5 2h13A3.5 3.5 0 0 1 22 5.5v13a3.5 3.5 0 0 1-3.5 3.5h-13A3.5 3.5 0 0 1 2 18.5v-13zM5.5 3.5A2 2 0 0 0 3.5 5.5v13A2 2 0 0 0 5.5 20.5h13a2 2 0 0 0 2-2v-13a2 2 0 0 0-2-2h-13z"
-      />
+      <rect x="2" y="3.5" width="20" height="17" rx="3" />
+      <path d="M5 8v8h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2H5z" />
+      <path d="M12 8v8" />
+      <path d="M12 8h2.5" />
+      <path d="M12 12h2" />
+      <path d="M12 16h2.5" />
+      <path d="M16.5 8l1.5 8 1.5-8" />
     </svg>
   );
 }

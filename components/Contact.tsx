@@ -150,6 +150,8 @@ export default function Contact() {
                 href={PORTFOLIO_DATA.profile.devto}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Dev.to Profile"
+                title="Dev.to Profile"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:text-white transition-colors"
               >
                 <DevtoIcon className="w-3.5 h-3.5" />

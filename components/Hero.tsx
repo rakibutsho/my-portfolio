@@ -130,7 +130,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={3}
-              className="flex flex-wrap items-center gap-3 pt-2"
+              className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2"
             >
               {/* Primary: Download Resume */}
               <motion.a
@@ -138,7 +138,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.98 }}
                 href={PORTFOLIO_DATA.profile.resumePdf}
                 download="Rakibul_Islam_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition-colors shadow-md shadow-indigo-600/30 hover:shadow-indigo-500/50"
+                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs sm:text-sm transition-colors shadow-md shadow-indigo-600/30 hover:shadow-indigo-500/50"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Resume</span>
@@ -149,7 +149,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleCopyEmail}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-200 hover:text-white font-medium text-sm transition-colors group"
+                className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-200 hover:text-white font-medium text-xs sm:text-sm transition-colors group"
               >
                 {copied ? (
                   <>
@@ -164,44 +164,50 @@ export default function Hero() {
                 )}
               </motion.button>
 
-              {/* GitHub Link */}
-              <motion.a
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-                href={PORTFOLIO_DATA.profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub Profile"
-                className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-colors"
-              >
-                <GithubIcon className="w-4 h-4" />
-              </motion.a>
+              {/* Social Icons Group (Kept together) */}
+              <div className="flex items-center gap-2">
+                {/* GitHub Link */}
+                <motion.a
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={PORTFOLIO_DATA.profile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                  title="GitHub Profile"
+                  className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-colors"
+                >
+                  <GithubIcon className="w-4 h-4" />
+                </motion.a>
 
-              {/* LinkedIn Link */}
-              <motion.a
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-                href={PORTFOLIO_DATA.profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn Profile"
-                className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-colors"
-              >
-                <LinkedinIcon className="w-4 h-4" />
-              </motion.a>
+                {/* LinkedIn Link */}
+                <motion.a
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={PORTFOLIO_DATA.profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  title="LinkedIn Profile"
+                  className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-colors"
+                >
+                  <LinkedinIcon className="w-4 h-4" />
+                </motion.a>
 
-              {/* Dev.to Link */}
-              <motion.a
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-                href={PORTFOLIO_DATA.profile.devto}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Dev.to Profile"
-                className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-colors"
-              >
-                <DevtoIcon className="w-4 h-4" />
-              </motion.a>
+                {/* Dev.to Link */}
+                <motion.a
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={PORTFOLIO_DATA.profile.devto}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Dev.to Profile"
+                  title="Dev.to Profile"
+                  className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-colors"
+                >
+                  <DevtoIcon className="w-4 h-4" />
+                </motion.a>
+              </div>
             </motion.div>
 
             {/* Quick Tech Pill Row */}
