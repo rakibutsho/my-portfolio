@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rakibutsho.dev"),
   title: "Md. Rakibul Islam | Full-Stack Software Engineer",
   description:
-    "Full-Stack Software Engineer building high-performance web applications with React, Next.js, Node.js, and modern cloud infrastructure.",
+    "Full-Stack Software Engineer building high-performance web apps with React, Next.js, Node.js, and cloud systems.",
   keywords: [
     "Md. Rakibul Islam",
     "Rakib Utsho",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Md. Rakibul Islam | Full-Stack Software Engineer",
     description:
-      "Full-Stack Software Engineer building high-performance web applications with React, Next.js, Node.js, and modern cloud infrastructure.",
+      "Full-Stack Software Engineer building high-performance web apps with React, Next.js, Node.js, and cloud systems.",
     url: "https://rakibutsho.dev",
     siteName: "Md. Rakibul Islam Portfolio",
     locale: "en_US",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Md. Rakibul Islam | Full-Stack Software Engineer",
     description:
-      "Full-Stack Software Engineer building high-performance web applications with React, Next.js, Node.js, and modern cloud infrastructure.",
+      "Full-Stack Software Engineer building high-performance web apps with React, Next.js, Node.js, and cloud systems.",
     creator: "@rakibutsh",
     images: [
       {
