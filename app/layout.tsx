@@ -15,9 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rakibutsho.dev"),
   title: "Md. Rakibul Islam | Full-Stack Software Engineer",
   description:
-    "Full-Stack Software Engineer with 1.5+ years of production experience building high-performance web applications with React, Next.js, Node.js, and modern cloud infrastructure.",
+    "Full-Stack Software Engineer building high-performance web applications with React, Next.js, Node.js, and modern cloud infrastructure.",
   keywords: [
     "Md. Rakibul Islam",
     "Rakib Utsho",
@@ -30,14 +31,41 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
   authors: [{ name: "Md. Rakibul Islam", url: "https://rakibutsho.dev" }],
+  creator: "Md. Rakibul Islam",
+  alternates: {
+    canonical: "https://rakibutsho.dev",
+  },
   openGraph: {
     title: "Md. Rakibul Islam | Full-Stack Software Engineer",
     description:
-      "Full-Stack Software Engineer building end-to-end web applications with React/Next.js, Node.js, and cloud systems.",
+      "Full-Stack Software Engineer building high-performance web applications with React, Next.js, Node.js, and modern cloud infrastructure.",
     url: "https://rakibutsho.dev",
     siteName: "Md. Rakibul Islam Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Md. Rakibul Islam | Full-Stack Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Md. Rakibul Islam | Full-Stack Software Engineer",
+    description:
+      "Full-Stack Software Engineer building high-performance web applications with React, Next.js, Node.js, and modern cloud infrastructure.",
+    creator: "@rakibutsh",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Md. Rakibul Islam | Full-Stack Software Engineer",
+      },
+    ],
   },
   icons: {
     icon: "/icon.svg",
