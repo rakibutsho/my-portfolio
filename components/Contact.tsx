@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Mail, Phone, Copy, Check, Download, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { GithubIcon, LinkedinIcon, DevtoIcon } from "@/components/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 
 export default function Contact() {
@@ -143,6 +143,17 @@ export default function Contact() {
               >
                 <LinkedinIcon className="w-3.5 h-3.5" />
                 <span>linkedin.com/in/rakibutsho</span>
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                href={PORTFOLIO_DATA.profile.devto}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:text-white transition-colors"
+              >
+                <DevtoIcon className="w-3.5 h-3.5" />
+                <span>dev.to/rakibutsh</span>
               </motion.a>
             </div>
 

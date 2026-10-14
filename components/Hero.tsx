@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Download, Copy, Check, Clock, MapPin } from "lucide-react";
 import { motion } from "motion/react";
-import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { GithubIcon, LinkedinIcon, DevtoIcon } from "@/components/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 
 export default function Hero() {
@@ -188,6 +188,19 @@ export default function Hero() {
                 className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-colors"
               >
                 <LinkedinIcon className="w-4 h-4" />
+              </motion.a>
+
+              {/* Dev.to Link */}
+              <motion.a
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                href={PORTFOLIO_DATA.profile.devto}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Dev.to Profile"
+                className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-slate-300 hover:text-white transition-colors"
+              >
+                <DevtoIcon className="w-4 h-4" />
               </motion.a>
             </motion.div>
 
