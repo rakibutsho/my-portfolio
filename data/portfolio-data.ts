@@ -67,7 +67,7 @@ export const PORTFOLIO_DATA = {
     phone: "+880 1707-934655",
     github: "https://github.com/rakibutsho",
     linkedin: "https://linkedin.com/in/rakibutsho",
-    devto: "https://dev.to/rakibutsh",
+    devto: "https://dev.to/rakibutsho",
     website: "https://rakibutsho.dev",
     resumePdf: "/Rakibul_Islam_Resume.pdf",
   },
